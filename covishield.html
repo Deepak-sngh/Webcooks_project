@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleDashboard.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+    <title>Covishield</title>
+</head>
+<body>
+    <div class="main_container">
+        <nav class="navbar_container">
+            <div id="leftNav">
+                <a href="index.html"><img id="logo" src="logo.png" alt="Logo" ></a>
+            </div>
+            <div id="centerNav">
+                <h1 class="main_heading">Covishield Centres</h1>
+            </div>
+            <div id="rightNav">
+                <h2>Hello Deepak !</h2>
+            </div>
+        </nav>
+
+
+        <div class="container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Center Id</th>
+                        <th>Name</th>
+                        <th>Block name</th>
+                        <th>Time</th>
+                        <th>Minimum Age Limit</th>
+                        <th>Vaccine</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+        
+                </tbody>
+            </table>
+    
+        </div>
+    
+    </div>
+
+    
+</body>
+<script>
+function amritsarData(){
+    let temp =``;
+
+fetch("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=485&date=31-03-2021")
+.then((res) => {
+  res.json().then((data) => {
+    
+    if (Object.keys(data).length > 0) { 
+
+
+     Object.keys(data.sessions).forEach((val) => {
+         if(data.sessions[val].vaccine=="COVISHIELD"){
+        temp += `<tr> <td>  ${data.sessions[val].center_id} </td>
+        <td>   ${data.sessions[val].name}  </td>
+        <td>   ${data.sessions[val].block_name}  </td>
+        <td>   ${data.sessions[val].from}  </td>
+        <td>   ${data.sessions[val].min_age_limit}  </td>
+        <td>   ${data.sessions[val].vaccine}  </td>
+        
+        </tr>`;
+         }
+    
+      });
+ 
+
+      document.getElementById("myTable").innerHTML = temp;
+    }
+  });
+});
+
+}
+
+
+amritsarData();
+</script>
+
+    
+
+</html>

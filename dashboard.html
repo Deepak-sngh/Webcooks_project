@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleDashboard.css">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="main_container">
+        <nav class="navbar_container">
+            <div id="leftNav">
+                <a href="index.html"><img id="logo" src="logo.png" alt="Logo" ></a>
+            </div>
+            <div id="centerNav">
+                <h1 class="main_heading">Covid Tracking Project</h1>
+            </div>
+            <div id="rightNav">
+                <h2>Hello Deepak !</h2>
+            </div>
+        </nav>
+        <section>
+            <div class="contentDash">
+                <h1>Find information about vaccination centres with just one tap</h1>
+                <p>Explore through available vaccination centres and plan your trip accordingly.<br> With realtime feed, stay posted about all the information about availibility of slots, vaccinations, timings and much more.  </p>
+            </div>
+            <div class="options">
+                <div class="option" id="time"><img class="image1" src="time.png" alt=""><h3>Timings</h3><p>Find opening and closing timings of vaccination centres. </p></div>
+                <div class="option" id="free"><img class="image1" src="free.png" alt=""><h3>Free Vaccines</h3><p>Find vaccination centres with free vaccination. Save time and money both</p></div>
+                <div class="option" id="covishield"><img class="image1" src="covishield.png" alt=""><h3>Covishield</h3><p>Find the vaccination centres with covishield available. Get vaccinated today</p></div>
+                <div class="option" id="centre"><img class="image1" src="center.png" alt=""><h3>Centres</h3><p>Find vaccination centres near you and plan your vaccination</p></div>
+            </div>
+
+        </section>
+      
+    
+    </div>
+
+    
+</body>
+
+<script>
+    document.getElementById('time').addEventListener('click',function(){
+        location.href = "timings.html";
+    })
+    document.getElementById('free').addEventListener('click',function(){
+        location.href = "free.html";
+    })
+    document.getElementById('covishield').addEventListener('click',function(){
+        location.href = "covishield.html";
+    })
+    document.getElementById('centre').addEventListener('click',function(){
+        location.href = "centre.html";
+    })
+</script>
+
+
+</html>
